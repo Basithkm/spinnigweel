@@ -1,5 +1,12 @@
 function myfunction() {
 
+
+	
+	var elements = document.getElementsByClassName("important");
+    var inputValue = parseInt(elements[0].value);
+	console.log(inputValue)
+
+	
 	var bTags = document.getElementsByTagName('b');
 	var valuesArray = []; 
 	for (var i = 0; i < bTags.length; i++) {
@@ -17,13 +24,10 @@ function myfunction() {
 	element.classList.remove('animate');
 	setTimeout(function(){
 		element.classList.add('animate');
-		// var valueList = ["Gaming","Homework","Sport","Sleep","Eat","Rest","Talk","Work",];
-		var valueList = [valuesArray[0],valuesArray[1],valuesArray[2],valuesArray[3],valuesArray[4],valuesArray[5],valuesArray[6],valuesArray[7]];
-	
-		var getValue = valueList[Math.floor(Math.random() * valueList.length)];
 
-		alert(getValue); 
+		const randomIndex = Math.floor(Math.random() * (valuesArray.length - inputValue)) + inputValue;
+    	const randomElement = valuesArray[randomIndex];
+		alert(randomElement); 
 
-		
 	}, 5000);
 }
